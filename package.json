@@ -8,6 +8,9 @@
     "install:all": "npm install --prefix client && npm install --prefix server",
     "client:dev": "npm run dev --prefix client",
     "server:dev": "npm run dev --prefix server",
+    "seed:tracks": "npm run seed:tracks --prefix server",
+    "seed:admin": "npm run seed:admin --prefix server",
+    "seed:demo": "npm run seed:demo --prefix server",
     "start": "node server/src/server.js"
   },
   "dependencies": {

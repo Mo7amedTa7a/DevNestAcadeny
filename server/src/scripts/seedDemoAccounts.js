@@ -35,15 +35,16 @@ async function seedDemoAccounts() {
   // 2. Ensure Student (Omar Sherif / student.test@devnest.academy)
   const studentHash = await User.hashPassword('Student@123');
   const student = await User.findOneAndUpdate(
-    { studentCode: 'DN-FE-26-001' },
+    { email: 'student@devnest.academy' },
     {
       fullName: 'عمر شريف',
       email: 'student@devnest.academy',
+      studentCode: 'DN-FE-26-001',
       passwordHash: studentHash,
       role: 'student',
       isActive: true,
     },
-    { returnDocument: 'after' }
+    { upsert: true, returnDocument: 'after' }
   );
 
   // 3. Ensure Active Cohort Enrollment

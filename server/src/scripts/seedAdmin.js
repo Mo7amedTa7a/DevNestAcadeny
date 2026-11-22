@@ -17,7 +17,7 @@ const seedAdmin = async () => {
       process.exit(0);
     }
 
-    const passwordHash = await User.hashPassword('Admin@123');
+    const passwordHash = await User.hashPassword('MhamedTaha@123');
 
     const admin = await User.create({
       fullName: 'DevNest Admin',
@@ -27,7 +27,7 @@ const seedAdmin = async () => {
       isActive: true,
     });
 
-    console.log(`✅ Admin created: ${admin.email} (password: Admin@123)`);
+    console.log(`✅ Admin created: ${admin.email} (password: MhamedTaha@123)`);
     process.exit(0);
   } catch (error) {
     console.error('❌ Failed to seed admin:', error.message);

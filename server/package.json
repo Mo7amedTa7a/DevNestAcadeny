@@ -6,7 +6,9 @@
     "dev": "nodemon src/server.js",
     "start": "node src/server.js",
     "seed:admin": "node src/scripts/seedAdmin.js",
-    "seed:course": "node src/scripts/seedCourse.js"
+    "seed:course": "node src/scripts/seedCourse.js",
+    "seed:tracks": "node src/scripts/seedAllTracks.js",
+    "seed:demo": "node src/scripts/seedDemoAccounts.js"
   },
   "keywords": [],
   "author": "DevNest Academy",
