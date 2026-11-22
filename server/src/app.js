@@ -123,6 +123,22 @@ app.use('/api/tasks', tasksRoutes);
 app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/assessments', assessmentLimiter, assessmentsRoutes);
 
+// Root status check
+app.get('/', (_req, res) => {
+  res.json({
+    success: true,
+    name: 'DevNest Academy API',
+    status: 'online',
+    version: '1.0.0',
+    endpoints: {
+      health: '/api/health',
+      courses: '/api/courses',
+      auth: '/api/auth/login',
+    },
+    timestamp: new Date().toISOString(),
+  });
+});
+
 // Health check
 app.get('/api/health', (_req, res) => {
   res.json({ success: true, message: 'DevNest Academy API is running', timestamp: new Date().toISOString() });

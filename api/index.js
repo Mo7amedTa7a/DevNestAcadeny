@@ -12,9 +12,11 @@ module.exports = async (req, res) => {
       error: process.env.NODE_ENV === 'production' ? undefined : err.message,
     });
   }
-  // Ensure req.url has /api prefix if Vercel rewrite stripped it
-  if (!req.url.startsWith('/api')) {
-    req.url = '/api' + req.url;
+  // Keep root and public endpoints as-is; ensure API routes have /api prefix
+  if (req.url === '/' || req.url === '' || req.url === '/robots.txt' || req.url === '/sitemap.xml') {
+    req.url = req.url || '/';
+  } else if (!req.url.startsWith('/api')) {
+    req.url = '/api' + (req.url.startsWith('/') ? req.url : '/' + req.url);
   }
 
   return app(req, res);
