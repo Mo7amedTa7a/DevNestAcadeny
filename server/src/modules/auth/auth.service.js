@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-const { v4: uuidv4 } = require('uuid');
+const crypto = require('crypto');
 const { env } = require('../../config/env');
 const { AppError } = require('../../utils/AppError');
 const { ERROR_CODES } = require('../../utils/constants');
@@ -38,7 +38,7 @@ const login = async (identifier, password) => {
   }
 
   // Generate new session ID (invalidates any previous session — single-session enforcement)
-  const sessionId = uuidv4();
+  const sessionId = crypto.randomUUID();
   user.activeSessionId = sessionId;
   await user.save();
 
