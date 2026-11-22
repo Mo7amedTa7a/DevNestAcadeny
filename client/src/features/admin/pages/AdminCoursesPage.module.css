@@ -1,0 +1,799 @@
+/* ============================================================
+   Admin Courses & Announcement Manager — Styles
+   ============================================================ */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  direction: rtl;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ============================================================
+   Announcement Manager Section
+   ============================================================ */
+
+.announcementSection {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.sectionTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionTitleCol {
+  flex: 1;
+  min-width: 280px;
+}
+
+.tagBadge {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-brand);
+  background: rgba(0, 119, 215, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  margin-bottom: 6px;
+}
+
+.sectionTitle {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.sectionDesc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Master Switch Toggle */
+.toggleBox {
+  display: flex;
+  align-items: center;
+}
+
+.switchLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggleInput {
+  display: none;
+}
+
+.switchSlider {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  background-color: #cbd5e1;
+  border-radius: 9999px;
+  transition: background-color var(--transition-fast);
+}
+
+.switchSlider::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform var(--transition-fast);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggleInput:checked + .switchSlider {
+  background-color: var(--color-success);
+}
+
+.toggleInput:checked + .switchSlider::before {
+  transform: translateX(-22px);
+}
+
+.switchText {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/* ============================================================
+   Announcement Live Preview Card (Matching Screenshot)
+   ============================================================ */
+
+.previewContainer {
+  background: var(--color-bg);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.previewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.previewTitleLabel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.officialAnnouncement {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 71, 171, 0.08) 0%, rgba(0, 194, 255, 0.06) 100%);
+  border: 1px solid rgba(0, 194, 255, 0.4);
+  border-radius: var(--radius-xl);
+  padding: var(--space-3) var(--space-5);
+  box-shadow: 0 4px 16px rgba(0, 71, 171, 0.08);
+  text-align: right;
+  transition: all var(--transition-fast);
+}
+
+.officialAnnouncement--disabled {
+  opacity: 0.45;
+  filter: grayscale(0.5);
+  border-color: #cbd5e1;
+}
+
+.announcementBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pulseDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 6px var(--color-accent);
+  animation: pulse 1.6s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.5;
+  }
+}
+
+.announcementIcon {
+  font-size: 0.95rem;
+}
+
+.announcementContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.announcementTitle {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin: 0;
+  font-weight: 700;
+}
+
+.announcementDetails {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.announcementBtnPreview {
+  flex-shrink: 0;
+}
+
+/* Controls Form */
+.controlsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  padding: var(--space-2) 0;
+}
+
+.fieldCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.modeTabs {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.modeBtn {
+  flex: 1;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  cursor: pointer;
+  color: var(--color-text-muted);
+  transition: all var(--transition-fast);
+}
+
+.modeBtn:hover {
+  border-color: var(--color-brand);
+  color: var(--color-text);
+}
+
+.modeBtn--active {
+  background: rgba(0, 119, 215, 0.1) !important;
+  border-color: var(--color-brand) !important;
+  color: var(--color-brand) !important;
+  font-weight: 700;
+}
+
+.selectBox {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  outline: none;
+}
+
+.selectBox:focus {
+  border-color: var(--color-brand);
+}
+
+/* Form Inputs Grid */
+.editFieldsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+.inputLabel {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: var(--text-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: inherit;
+  resize: vertical;
+  line-height: 1.5;
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: var(--color-brand);
+}
+
+.announcementActionsRow {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--space-2);
+}
+
+.saveAnnouncementBtn {
+  padding: var(--space-2) var(--space-8);
+  font-weight: 700;
+}
+
+/* ============================================================
+   Section 2: Tracks Grid & Management
+   ============================================================ */
+
+.tracksSectionHeader {
+  margin-top: var(--space-4);
+}
+
+.tracksSectionTitle {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0 0 4px 0;
+}
+
+.tracksSectionSubtitle {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-6);
+}
+
+.courseCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  transition: all var(--transition-fast);
+}
+
+.courseCard:hover {
+  border-color: rgba(0, 119, 215, 0.3);
+  box-shadow: var(--shadow-md);
+}
+
+.courseCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.courseIconBox {
+  font-size: 1.8rem;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: rgba(0, 119, 215, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.courseStatusCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.courseCardTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2) 0;
+  line-height: 1.4;
+}
+
+.courseCardDesc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin: 0 0 var(--space-4) 0;
+  flex: 1;
+}
+
+.courseCardMeta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  margin-bottom: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+}
+
+.metaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaLabel {
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.metaVal {
+  color: var(--color-text);
+  font-weight: 700;
+}
+
+/* Action Buttons Grid in Course Card */
+.courseActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.toggleRegBtn {
+  font-weight: 700;
+  width: 100%;
+}
+
+.setAnnouncementBtn {
+  font-weight: 600;
+  width: 100%;
+  background: var(--color-bg);
+}
+
+.editBtn {
+  font-weight: 600;
+  width: 100%;
+}
+
+/* ============================================================
+   Edit Course Modal Styles
+   ============================================================ */
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  max-height: 75vh;
+  overflow-y: auto;
+  padding-left: var(--space-2);
+}
+
+.modalGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.curriculumSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+.curriculumHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.curriculumTitle {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.modulesList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.moduleEditCard {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.moduleTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.moduleNumberTag {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: var(--color-brand);
+  background: rgba(0, 119, 215, 0.08);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.deleteModuleBtn {
+  background: none;
+  border: none;
+  color: var(--color-danger);
+  font-size: var(--text-xs);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.deleteModuleBtn:hover {
+  text-decoration: underline;
+}
+
+.moduleFields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+}
+
+/* Loading */
+.loadingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+  gap: var(--space-4);
+  color: var(--color-text-muted);
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(0, 119, 215, 0.15);
+  border-top-color: var(--color-brand);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-3);
+  }
+  .officialAnnouncement {
+    flex-direction: column;
+    text-align: center;
+  }
+  .editFieldsGrid,
+  .modalGrid,
+  .moduleFields {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .courseCardMeta {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
+  .previewContainer {
+    padding: var(--space-2);
+  }
+}
+
+/* ============================================================
+   Pricing & Limited-Time Offer Controls
+   ============================================================ */
+.pricingEditorCard {
+  grid-column: 1 / -1;
+  background: rgba(0, 119, 215, 0.04);
+  border: 1px solid rgba(0, 119, 215, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.pricingEditorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid rgba(0, 119, 215, 0.15);
+}
+
+.pricingEditorTitle {
+  font-size: var(--text-sm);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.offerSwitchBox {
+  display: flex;
+  align-items: center;
+}
+
+.offerActiveGlow {
+  border-color: rgba(245, 158, 11, 0.4);
+  background: rgba(245, 158, 11, 0.04);
+}
+
+.offerFieldsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.savingsCalcPreview {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.featuresEditorBox {
+  grid-column: 1 / -1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.featuresHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.featuresTitle {
+  font-size: var(--text-xs);
+  font-weight: 800;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.featureRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.deleteFeatureBtn {
+  background: none;
+  border: 1px solid var(--color-border);
+  color: #ef4444;
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.deleteFeatureBtn:hover {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: #ef4444;
+}
+
+.shareBtn {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: rgba(0, 194, 255, 0.08);
+  border: 1px solid rgba(0, 194, 255, 0.3);
+  color: #00c2ff;
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.shareBtn:hover {
+  background: rgba(0, 194, 255, 0.16);
+  border-color: #00c2ff;
+}
+
+.offerPriceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #f59e0b;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 700;
+}
+

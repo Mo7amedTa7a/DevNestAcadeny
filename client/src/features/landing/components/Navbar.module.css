@@ -1,0 +1,229 @@
+/* ============================================================
+   Navbar — Styles
+   ============================================================ */
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-sticky);
+  background: rgba(248, 250, 252, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-normal);
+}
+
+.header--scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom-color: var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brandLink {
+  display: inline-flex;
+}
+
+.navDesktop {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.navLink {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+  color: var(--color-brand);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.loginLink {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.loginLink:hover {
+  color: var(--color-brand);
+  background: var(--color-bg);
+}
+
+.ctaBtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.pulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  box-shadow: 0 0 8px var(--color-accent);
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.6;
+  }
+}
+
+.mobileToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--color-text);
+  padding: var(--space-2);
+  border-radius: var(--radius-md);
+  transition: background-color var(--transition-fast);
+}
+
+.mobileToggle:hover {
+  background: var(--color-bg);
+}
+
+.mobileMenu {
+  display: none;
+}
+
+.mobileBackdrop {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .navDesktop {
+    display: none;
+  }
+  .loginLink {
+    display: none;
+  }
+  .mobileToggle {
+    display: flex;
+  }
+  .mobileBackdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    z-index: var(--z-dropdown);
+  }
+  .mobileMenu {
+    position: relative;
+    z-index: calc(var(--z-dropdown) + 1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-4) var(--space-4);
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+  }
+  .mobileNavLink {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+  }
+  .mobileNavLink:hover,
+  .mobileNavLink:active {
+    background: var(--color-bg);
+    color: var(--color-brand);
+  }
+  .mobileActions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-top: var(--space-2);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--color-border);
+  }
+  .mobileLoginLink {
+    text-align: center;
+    padding: var(--space-3);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    color: var(--color-brand);
+    border-radius: var(--radius-md);
+  }
+  .mobileCtaBtn {
+    min-height: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: var(--space-2) var(--space-4);
+  }
+  .mobileCtaMainText {
+    font-size: var(--text-base);
+    font-weight: 700;
+  }
+  .cohortSubtext {
+    font-size: 11px;
+    opacity: 0.9;
+    font-weight: 500;
+  }
+  .ctaBtn {
+    padding: 4px 10px;
+    font-size: 11px;
+    min-height: 32px;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--space-2) var(--space-3);
+  }
+  .actions {
+    gap: var(--space-2);
+  }
+  .ctaBtn {
+    padding: 3px 8px;
+    font-size: 11px;
+    min-height: 28px;
+  }
+}

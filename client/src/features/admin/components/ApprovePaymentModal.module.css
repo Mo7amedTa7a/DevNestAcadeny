@@ -1,0 +1,199 @@
+/* ============================================================
+   ApprovePaymentModal — Styles
+   ============================================================ */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.applicantSummary {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.sumLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  display: block;
+}
+
+.sumName {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  margin-inline-end: var(--space-2);
+}
+
+.sumEmail {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.sumBadges {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tierSelect {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.tierOption {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.tierOption:hover {
+  border-color: var(--color-brand);
+}
+
+.tierOption--active {
+  border-color: var(--color-primary);
+  background: rgba(0, 71, 171, 0.04);
+}
+
+.tierOption input {
+  margin-top: 3px;
+  accent-color: var(--color-primary);
+}
+
+.tierOption strong {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  display: block;
+}
+
+.tierOption p {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.textarea {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-family: inherit;
+  outline: none;
+}
+
+.textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.12);
+}
+
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+/* ----- Success View ----- */
+.successView {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.codeCard {
+  background: #060D1A;
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  text-align: center;
+  box-shadow: 0 0 24px rgba(0, 194, 255, 0.2);
+}
+
+.codeLabel {
+  font-size: var(--text-xs);
+  color: #94A3B8;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.studentCode {
+  font-size: var(--text-3xl);
+  font-family: var(--font-mono);
+  color: #00C2FF;
+  display: block;
+  margin: var(--space-1) 0;
+}
+
+.codeHint {
+  font-size: var(--text-xs);
+  color: #64748B;
+}
+
+.credDetails {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.credRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+}
+
+.credRow span {
+  color: var(--color-text-muted);
+}
+
+.credRow strong {
+  color: var(--color-text);
+}
+
+.tempPass {
+  font-family: var(--font-mono);
+  color: var(--color-brand) !important;
+  background: rgba(0, 119, 215, 0.1);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}

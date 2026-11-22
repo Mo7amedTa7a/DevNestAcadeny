@@ -1,0 +1,65 @@
+/* ============================================================
+   Skeleton — Design System Primitive (Skeleton Loader)
+   ============================================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg) 25%,
+    var(--color-border) 50%,
+    var(--color-bg) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite ease-in-out;
+  border-radius: var(--radius-md);
+}
+
+/* ----- Variants ----- */
+.skeleton--text {
+  height: 14px;
+  width: 100%;
+}
+
+.skeleton--title {
+  height: 24px;
+  width: 60%;
+}
+
+.skeleton--avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+}
+
+.skeleton--card {
+  height: 120px;
+  width: 100%;
+  border-radius: var(--radius-lg);
+}
+
+.skeleton--button {
+  height: 40px;
+  width: 120px;
+  border-radius: var(--radius-md);
+}
+
+/* ----- Stack (multiple lines) ----- */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.stack .skeleton--text:last-child {
+  width: 75%;
+}
+
+/* ----- Animation ----- */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}

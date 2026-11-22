@@ -1,0 +1,408 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  direction: rtl;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--font-2xl);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.subtitle {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.lockedContainer {
+  background: var(--color-bg-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  max-width: 600px;
+  margin: var(--space-8) auto;
+  direction: rtl;
+}
+
+.lockIcon {
+  font-size: 3rem;
+}
+
+.lockTitle {
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.lockText {
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* My Rank Banner */
+.myRankBanner {
+  background: linear-gradient(135deg, rgba(0, 71, 171, 0.25) 0%, rgba(0, 194, 255, 0.12) 100%);
+  border: 1px solid var(--color-interactive-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.myRankRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.myRankBadge {
+  background: var(--color-interactive-default);
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.myRankNumber {
+  font-family: var(--font-mono);
+  font-size: var(--font-xl);
+  font-weight: 800;
+  color: var(--color-brand-accent);
+}
+
+.myRankDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.myRankName {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: var(--font-base);
+}
+
+.myRankCode {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  color: var(--color-brand-accent);
+}
+
+.myRankStats {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.myRankStatItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.myRankStatLabel {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+}
+
+.myRankPoints {
+  font-family: var(--font-mono);
+  font-size: var(--font-2xl);
+  font-weight: 800;
+  color: var(--color-brand-accent);
+}
+
+.myRankTasks {
+  font-family: var(--font-mono);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Podium Section */
+.podiumSection {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  align-items: flex-end;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+.podiumCard {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-2);
+  position: relative;
+  transition: transform var(--transition-fast);
+}
+
+.podiumCard--empty {
+  visibility: hidden;
+}
+
+.podiumCard--gold {
+  border-color: #ffd700;
+  background: linear-gradient(180deg, rgba(255, 215, 0, 0.12) 0%, var(--color-bg-surface) 100%);
+  transform: translateY(-12px);
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.15);
+}
+
+.podiumCard--silver {
+  border-color: #c0c0c0;
+  background: linear-gradient(180deg, rgba(192, 192, 192, 0.08) 0%, var(--color-bg-surface) 100%);
+}
+
+.podiumCard--bronze {
+  border-color: #cd7f32;
+  background: linear-gradient(180deg, rgba(205, 127, 50, 0.08) 0%, var(--color-bg-surface) 100%);
+}
+
+.crownIcon {
+  font-size: 2rem;
+  margin-top: -10px;
+}
+
+.podiumBadge {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.podiumAvatar {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-lg);
+  font-weight: 700;
+}
+
+.podiumAvatar--gold {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #ffd700 0%, #b8860b 100%);
+  color: #111827;
+  font-size: var(--font-xl);
+}
+
+.podiumName {
+  font-size: var(--font-base);
+  color: var(--color-text-primary);
+}
+
+.podiumCode {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  color: var(--color-brand-accent);
+}
+
+.podiumScore {
+  font-family: var(--font-mono);
+  font-size: var(--font-lg);
+  color: var(--color-text-primary);
+  margin-top: var(--space-1);
+}
+
+.podiumScore strong {
+  font-size: var(--font-xl);
+  font-weight: 800;
+}
+
+.podiumScore--gold strong {
+  color: #ffd700;
+}
+
+.podiumTasks {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+}
+
+/* Table Section */
+.tableCard {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.tableHeader {
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tableTitle {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.tableResponsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: right;
+  font-size: var(--font-sm);
+  min-width: 500px;
+}
+
+.table th {
+  padding: var(--space-3) var(--space-5);
+  background: var(--color-bg-subtle);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: var(--font-xs);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table td {
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.myRow {
+  background: rgba(0, 119, 215, 0.12) !important;
+}
+
+.rankPill {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.rankPill--top1 {
+  color: #ffd700;
+}
+
+.rankPill--top2 {
+  color: #c0c0c0;
+}
+
+.rankPill--top3 {
+  color: #cd7f32;
+}
+
+.studentCell {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tableAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-xs);
+}
+
+.tableName {
+  font-weight: 600;
+}
+
+.tableCode {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  color: var(--color-brand-accent);
+}
+
+.tableTasks {
+  font-family: var(--font-mono);
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.tablePoints {
+  font-family: var(--font-mono);
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-brand-accent);
+}
+
+.emptyTable {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-secondary);
+  font-size: var(--font-sm);
+}
+
+@media (max-width: 768px) {
+  .podiumSection {
+    grid-template-columns: 1fr;
+  }
+  .podiumCard--gold {
+    order: -1;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .myRankBanner {
+    flex-direction: column;
+    align-items: stretch;
+    padding: var(--space-4);
+    gap: var(--space-3);
+  }
+  .myRankRight {
+    justify-content: space-between;
+  }
+  .myRankStats {
+    justify-content: space-around;
+    width: 100%;
+    border-top: 1px solid rgba(0, 194, 255, 0.2);
+    padding-top: var(--space-3);
+    gap: var(--space-2);
+  }
+  .myRankPoints {
+    font-size: var(--font-xl);
+  }
+}

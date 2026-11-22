@@ -1,0 +1,407 @@
+/* ============================================================
+   AdminLayout — Styles
+   ============================================================ */
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+/* ----- Sidebar ----- */
+.sidebar {
+  width: 260px;
+  background: #060D1A;
+  border-inline-end: 1px solid #1E293B;
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-normal);
+  flex-shrink: 0;
+  z-index: var(--z-sticky);
+}
+
+.sidebar--collapsed {
+  width: 76px;
+}
+
+.sidebarHeader {
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #1E293B;
+  min-height: 64px;
+}
+
+.adminBadge {
+  margin-inline-start: var(--space-2);
+}
+
+.nav {
+  padding: var(--space-4) var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  color: #94A3B8;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navLink--active {
+  color: #00C2FF !important;
+  background: rgba(0, 194, 255, 0.1) !important;
+  font-weight: 700;
+}
+
+.navIcon {
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.sidebarFooter {
+  padding: var(--space-3);
+  border-top: 1px solid #1E293B;
+  display: flex;
+  justify-content: center;
+}
+
+.toggleSidebarBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #1E293B;
+  color: #94A3B8;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toggleSidebarBtn:hover {
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ----- Main Container ----- */
+.mainContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ----- Topbar ----- */
+.topbar {
+  height: 64px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+}
+
+.topbarStart {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mobileMenuBtn {
+  display: none;
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.academyTag {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.topbarEnd {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* Registration Toggle Button */
+.regControl {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.regLabel {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.regToggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.regToggleBtn--open {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.regToggleBtn--closed {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.toggleDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.userSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.userName {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.logoutBtn {
+  color: var(--color-danger) !important;
+}
+
+/* ----- Content View ----- */
+.content {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sidebarHeaderBrand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.mobileCloseBtn {
+  display: none;
+}
+
+.backdrop {
+  display: none;
+}
+
+.sidebarUserCard {
+  margin: var(--space-3) var(--space-3) var(--space-1);
+  padding: var(--space-3);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sidebarAvatar {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 800;
+  font-size: var(--text-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebarUserMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.sidebarUserName {
+  font-size: var(--text-xs);
+  color: #F8FAFC;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebarUserRole {
+  font-size: 10px;
+  color: #00C2FF;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .userName {
+    display: none;
+  }
+
+  .topbar {
+    padding: 0 var(--space-3);
+  }
+
+  .academyTag {
+    display: none;
+  }
+
+  .regLabel {
+    display: none;
+  }
+
+  .topbarEnd {
+    gap: var(--space-2);
+  }
+
+  .regToggleBtn {
+    padding: 4px 8px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .userSection {
+    gap: var(--space-1);
+  }
+
+  .logoutBtn {
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: min(280px, 85vw) !important;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar:not(.sidebar--collapsed) {
+    transform: translateX(0);
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 90;
+    animation: fadeIn 200ms ease;
+  }
+
+  .mobileCloseBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    color: #94A3B8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: color var(--transition-fast);
+  }
+
+  .mobileCloseBtn:hover {
+    color: #F8FAFC;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .content {
+    padding: var(--space-4);
+  }
+
+  .toggleSidebarBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    padding: 0 var(--space-3);
+  }
+
+  .academyTag {
+    display: none;
+  }
+
+  .regLabel {
+    display: none;
+  }
+
+  .topbarEnd {
+    gap: var(--space-3);
+  }
+
+  .regToggleBtn {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .content {
+    padding: var(--space-3);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

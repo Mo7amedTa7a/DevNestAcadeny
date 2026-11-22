@@ -1,0 +1,90 @@
+/* ============================================================
+   StatCard — Styles
+   ============================================================ */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.title {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.icon {
+  font-size: var(--text-xl);
+}
+
+.main {
+  margin-bottom: var(--space-2);
+}
+
+.value {
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+}
+
+.trend {
+  color: var(--color-success);
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--color-text-muted);
+}
+
+/* ----- Variants ----- */
+.card--primary {
+  border-inline-start: 4px solid var(--color-primary);
+}
+
+.card--brand {
+  border-inline-start: 4px solid var(--color-brand);
+}
+
+.card--accent {
+  border-inline-start: 4px solid var(--color-accent);
+}
+
+.card--success {
+  border-inline-start: 4px solid var(--color-success);
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: var(--space-3) !important;
+  }
+  .value {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 10px;
+    line-height: 1.3;
+  }
+}

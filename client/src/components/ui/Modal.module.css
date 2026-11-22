@@ -1,0 +1,129 @@
+/* ============================================================
+   Modal — Design System Primitive
+   ============================================================ */
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: var(--z-modal-backdrop);
+  animation: fadeIn 150ms ease;
+  padding: var(--space-3);
+}
+
+.modal {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  z-index: var(--z-modal);
+  max-width: min(95vw, 560px);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 200ms ease;
+  outline: none;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ----- Sizes ----- */
+.modal--sm {
+  max-width: min(95vw, 400px);
+}
+
+.modal--md {
+  max-width: min(95vw, 560px);
+}
+
+.modal--lg {
+  max-width: min(95vw, 760px);
+}
+
+.modal--xl {
+  max-width: min(95vw, 960px);
+}
+
+/* ----- Header ----- */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.close:hover {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ----- Body ----- */
+.body {
+  padding: var(--space-5);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .backdrop {
+    padding: var(--space-2);
+  }
+  .modal {
+    max-height: 92vh;
+    border-radius: var(--radius-lg);
+  }
+  .header {
+    padding: var(--space-3) var(--space-4);
+  }
+  .title {
+    font-size: var(--text-base);
+  }
+  .body {
+    padding: var(--space-4);
+  }
+}
+
+/* ----- Animations ----- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

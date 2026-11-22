@@ -1,0 +1,386 @@
+/* ============================================================
+   StudentLayout — Styles
+   ============================================================ */
+
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+}
+
+/* ----- Sidebar ----- */
+.sidebar {
+  width: 270px;
+  background: #060D1A;
+  border-inline-end: 1px solid #1E293B;
+  display: flex;
+  flex-direction: column;
+  transition: width var(--transition-normal);
+  flex-shrink: 0;
+  z-index: var(--z-sticky);
+}
+
+.sidebar--collapsed {
+  width: 76px;
+}
+
+.sidebarHeader {
+  padding: var(--space-4);
+  border-bottom: 1px solid #1E293B;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+/* Student Profile Card */
+.studentCard {
+  margin: var(--space-4) var(--space-3);
+  padding: var(--space-3);
+  background: #0E172A;
+  border: 1px solid #1E293B;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.studentAvatar {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand);
+  color: #fff;
+  font-weight: 800;
+  font-size: var(--text-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.studentMeta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.studentName {
+  font-size: var(--text-sm);
+  color: #F8FAFC;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.studentCode {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: #00C2FF;
+  font-weight: 700;
+}
+
+.cohortTag {
+  font-size: 10px;
+  color: #94A3B8;
+}
+
+/* Progress Widget */
+.progressWidget {
+  margin: 0 var(--space-3) var(--space-4);
+  padding: var(--space-3);
+  background: rgba(0, 194, 255, 0.04);
+  border: 1px solid rgba(0, 194, 255, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.progressHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-1);
+}
+
+.progressLabel {
+  font-size: var(--text-xs);
+  color: #94A3B8;
+}
+
+.progressValue {
+  font-size: var(--text-xs);
+  font-family: var(--font-mono);
+  color: #00C2FF;
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 6px;
+  background: #1E293B;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background: var(--gradient-brand);
+  border-radius: var(--radius-full);
+  transition: width 0.4s ease;
+}
+
+/* Nav */
+.nav {
+  padding: 0 var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-3);
+  color: #94A3B8;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.navLink:hover {
+  color: #F8FAFC;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.navLink--active {
+  color: #00C2FF !important;
+  background: rgba(0, 194, 255, 0.1) !important;
+  font-weight: 700;
+}
+
+.navIcon {
+  font-size: var(--text-lg);
+  line-height: 1;
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.soonBadge {
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+.sidebarFooter {
+  padding: var(--space-3);
+  border-top: 1px solid #1E293B;
+  display: flex;
+  justify-content: center;
+}
+
+.toggleSidebarBtn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #1E293B;
+  color: #94A3B8;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.toggleSidebarBtn:hover {
+  color: #F8FAFC;
+}
+
+/* ----- Main Container ----- */
+.mainContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  height: 64px;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-6);
+}
+
+.topbarStart {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.mobileMenuBtn {
+  display: none;
+  font-size: var(--text-xl);
+  color: var(--color-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.welcomeBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.courseTitle {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.topbarEnd {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.rankBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--color-warning);
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+
+.logoutBtn {
+  color: var(--color-danger) !important;
+}
+
+.content {
+  flex: 1;
+  padding: var(--space-6);
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.mobileCloseBtn {
+  display: none;
+}
+
+.backdrop {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    width: min(280px, 85vw) !important;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.5);
+  }
+
+  .sidebar:not(.sidebar--collapsed) {
+    transform: translateX(0);
+  }
+
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 90;
+    animation: fadeIn 200ms ease;
+  }
+
+  .sidebarHeader {
+    justify-content: space-between;
+  }
+
+  .mobileCloseBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    color: #94A3B8;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: color var(--transition-fast);
+  }
+
+  .mobileCloseBtn:hover {
+    color: #F8FAFC;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .mobileMenuBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .content {
+    padding: var(--space-4);
+  }
+
+  .toggleSidebarBtn {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    padding: 0 var(--space-3);
+  }
+
+  .courseTitle {
+    display: none;
+  }
+
+  .topbarEnd {
+    gap: var(--space-2);
+  }
+
+  .rankBadge {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .content {
+    padding: var(--space-3);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -1,0 +1,243 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  direction: rtl;
+  max-height: 75vh;
+  overflow-y: auto;
+  padding-left: var(--space-2);
+}
+
+.metaStrip {
+  display: flex;
+  gap: var(--space-6);
+  padding: var(--space-3) var(--space-4);
+  background: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-sm);
+  color: var(--color-text-secondary);
+}
+
+.metaItem strong {
+  color: var(--color-text-primary);
+}
+
+.filterBar {
+  display: flex;
+  gap: var(--space-2);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+  overflow-x: auto;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid transparent;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--font-xs);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  background: var(--color-bg-subtle);
+}
+
+.filterBtn--active {
+  background: rgba(0, 119, 215, 0.15);
+  border-color: var(--color-interactive-default);
+  color: var(--color-brand-accent);
+  font-weight: 600;
+}
+
+.filterBtn--cheat {
+  color: #ef4444;
+}
+
+.loadingState,
+.emptyState {
+  text-align: center;
+  padding: var(--space-8);
+  color: var(--color-text-secondary);
+  font-size: var(--font-sm);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.attemptCard {
+  background: var(--color-bg-base);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.attemptCard--cheat {
+  border-color: rgba(239, 68, 68, 0.4);
+  background: rgba(239, 68, 68, 0.03);
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.studentInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  background: var(--color-brand-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: var(--font-sm);
+}
+
+.studentName {
+  font-weight: 600;
+  color: var(--color-text-primary);
+  font-size: var(--font-sm);
+}
+
+.studentCode {
+  font-family: var(--font-mono);
+  font-size: var(--font-xs);
+  color: var(--color-brand-accent);
+  background: rgba(0, 194, 255, 0.08);
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+.scoreBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.percentageText {
+  font-family: var(--font-mono);
+  font-size: var(--font-lg);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.pointsText {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+  font-family: var(--font-mono);
+}
+
+.statusCol {
+  display: flex;
+  align-items: center;
+}
+
+.cardBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+}
+
+.viewViolationsBtn {
+  background: transparent;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+  color: #ef4444;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.viewViolationsBtn:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.violationsBox {
+  background: rgba(239, 68, 68, 0.06);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.violationsTitle {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: #ef4444;
+}
+
+.violationsTimeline {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.violationItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--font-xs);
+  padding: var(--space-1) 0;
+  border-bottom: 1px dashed rgba(239, 68, 68, 0.2);
+}
+
+.violationItem:last-child {
+  border-bottom: none;
+}
+
+.strikeBadge {
+  background: #ef4444;
+  color: white;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.violationDesc {
+  color: var(--color-text-primary);
+  flex: 1;
+  margin: 0 var(--space-2);
+}
+
+.violationTime {
+  font-family: var(--font-mono);
+  color: var(--color-text-secondary);
+  font-size: 11px;
+}

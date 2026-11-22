@@ -1,0 +1,137 @@
+/* ============================================================
+   DevNest Academy — Design Tokens (CSS Custom Properties)
+   Brand colors extracted from logo: #0047AB → #0077D7 → #00C2FF
+   ============================================================ */
+
+:root {
+  /* ----- Brand Palette ----- */
+  --color-primary: #0047AB;
+  --color-brand: #0077D7;
+  --color-accent: #00C2FF;
+  --gradient-brand: linear-gradient(135deg, #0047AB 0%, #0077D7 50%, #00C2FF 100%);
+  --color-gradient-brand: var(--gradient-brand);
+  --color-brand-accent: var(--color-accent);
+  --color-interactive-default: var(--color-brand);
+
+  /* ----- Surfaces ----- */
+  --color-bg: #F8FAFC;
+  --color-bg-base: #F8FAFC;
+  --color-bg-subtle: #F1F5F9;
+  --color-surface: #FFFFFF;
+  --color-bg-surface: #FFFFFF;
+  --color-surface-elevated: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-border-hover: #CBD5E1;
+
+  /* ----- Text ----- */
+  --color-text: #0F172A;
+  --color-text-primary: #0F172A;
+  --color-text-muted: #475569;
+  --color-text-secondary: #475569;
+  --color-text-on-primary: #FFFFFF;
+
+  /* ----- Semantic Status ----- */
+  --color-success: #10B981;
+  --color-success-bg: #ECFDF5;
+  --color-warning: #F59E0B;
+  --color-warning-bg: #FFFBEB;
+  --color-danger: #EF4444;
+  --color-danger-bg: #FEF2F2;
+  --color-info: #3B82F6;
+  --color-info-bg: #EFF6FF;
+
+  /* ----- Typography ----- */
+  --font-arabic: 'Cairo', sans-serif;
+  --font-english: 'Plus Jakarta Sans', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-lg: 1.125rem;   /* 18px */
+  --text-xl: 1.25rem;    /* 20px */
+  --text-2xl: 1.5rem;    /* 24px */
+  --text-3xl: 1.875rem;  /* 30px */
+  --text-4xl: 2.25rem;   /* 36px */
+
+  /* Typography Font-Size Aliases */
+  --font-xs: var(--text-xs);
+  --font-sm: var(--text-sm);
+  --font-base: var(--text-base);
+  --font-lg: var(--text-lg);
+  --font-xl: var(--text-xl);
+  --font-2xl: var(--text-2xl);
+  --font-3xl: var(--text-3xl);
+  --font-4xl: var(--text-4xl);
+
+  /* ----- Layout Containers ----- */
+  --container-xl: 1200px;
+  --container-lg: 1024px;
+  --container-md: 768px;
+
+  /* ----- Spacing ----- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+
+  /* ----- Border Radius ----- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ----- Shadows ----- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(0, 194, 255, 0.15);
+
+  /* ----- Transitions ----- */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+
+  /* ----- Z-Index Scale ----- */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal-backdrop: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+}
+
+/* ----- Dark Mode ----- */
+[data-theme='dark'] {
+  --color-bg: #060D1A;
+  --color-bg-base: #060D1A;
+  --color-bg-subtle: #0B132B;
+  --color-surface: #0E172A;
+  --color-bg-surface: #0E172A;
+  --color-surface-elevated: #152036;
+  --color-border: #1E293B;
+  --color-border-hover: #334155;
+
+  --color-text: #F8FAFC;
+  --color-text-primary: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-text-secondary: #94A3B8;
+
+  --color-success-bg: #064E3B;
+  --color-warning-bg: #78350F;
+  --color-danger-bg: #7F1D1D;
+  --color-info-bg: #1E3A5F;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 24px rgba(0, 194, 255, 0.2);
+}

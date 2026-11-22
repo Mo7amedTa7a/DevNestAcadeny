@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+Allow: /register
+Allow: /register/*
+Allow: /courses/*
+Disallow: /admin
+Disallow: /admin/*
+Disallow: /student
+Disallow: /student/*
+Disallow: /api/*
+
+Sitemap: https://devnest.academy/sitemap.xml
